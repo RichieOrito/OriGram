@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # The include function allows me to reference another URLconf.
+from django.conf import settings
+from django.conf.urls.static import static
 from users import views as users_views
 
 urlpatterns = [
@@ -23,4 +25,4 @@ urlpatterns = [
     path('users/', include(('users,urls', 'users'), namespace='users')),
     path('', include(('posts.urls', 'posts'), namespace='posts')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
