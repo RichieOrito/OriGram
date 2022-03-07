@@ -51,3 +51,11 @@ class UpdateProfileView(LoginRequiredMixin, UpdateView):
         """Return to user's profile."""
         username = self.object.user.username
         return reverse('users:detail', kwargs={'username_slug': username})
+
+class UserDetailView(DetailView):
+    """User detail view."""
+    template_name = 'users/detail.html'
+    slug_field = 'username'
+    slug_url_kwarg = 'username_slug'
+    queryset = User.objects.all()
+    context_object_name = 'user'
