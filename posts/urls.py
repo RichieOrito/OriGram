@@ -1,24 +1,20 @@
-from unicodedata import name
-from django.urls import path
-from django.contrib.auth.decorators import login_required
-from posts import views
+from django.conf.urls import url
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
+from django.urls import path, include
+
+from . import views
 
 urlpatterns = [
-    path(
-        route='',
-        view=login_required(views.PostFeedView.as_view()),
-        name='feed'
-    ),
+    path('', views.index, name='index'),
+    path('accounts/login/', views.login_user, name='login'),
+    path('accounts/register/', views.register_user, name='register'),
+    path('accounts/logout/', views.logout_user, name='logout'),
+    path('comment/<post_id>', views.comment, name='comment'),
+    path('like/<post_id>', views.like, name='like'),
+    path('follow/<user_id>', views.follow, name='follow'),
 
-    path(
-        route='posts/new/',
-        view=views.CreatePostView.as_view(),
-        name='create_post',
-    ),
-
-    path(
-        route='posts/<int:post_id>/',
-        view=login_required(views.PostDetailView.as_view()),
-        name='detail'
-    ),
 ]
