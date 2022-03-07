@@ -44,3 +44,10 @@ class UpdateProfileView(LoginRequiredMixin, UpdateView):
     model = Profile
     fields = ['website', 'biography', 'phone_number', 'picture']
     
+    def get_object(self):
+        """Return user's profile"""
+        return self.request.user.profile
+    def get_success_url(self):
+        """Return to user's profile."""
+        username = self.object.user.username
+        return reverse('users:detail', kwargs={'username_slug': username})
