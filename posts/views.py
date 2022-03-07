@@ -25,3 +25,13 @@ class createPostView(LoginRequiredMixin, CreateView):
         context = super().get_context_data(**kwargs)
         context['profile'] = self.request.user.profile
         return context
+
+class PostFeedView(ListView):
+    """
+    Return all published posts.
+    """
+    template_name = 'posts/feed.html'
+    model = Post
+    ordering = ('-created')
+    paginate_by = 4
+    context_object_name = 'posts'
