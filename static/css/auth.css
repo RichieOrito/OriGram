@@ -96,8 +96,6 @@
   }
   
   .wrapper .dif .fb {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,30 +140,4 @@
     width: 135px;
     height: 40px;
     margin: 0 5px;
-  }
-  
-  .footer {
-    position: absolute;
-    width: 100%;
-    padding: 40px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    bottom: 0;
-  }
-  
-  .footer .links ul li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .footer .links ul li a {
-    color: #003569;
-    font-size: 12px;
-  }
-  
-  .footer .copyright {
-    color: #999;
   }

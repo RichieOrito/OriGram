@@ -18,3 +18,5 @@ urlpatterns = [
     path('follow/<user_id>', views.follow, name='follow'),
 
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
