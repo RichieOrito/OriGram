@@ -1,4 +1,5 @@
 from django.http.response import Http404
+from posts.models import Post, Comment, Profile, Like, Follow
 from django.shortcuts import redirect, render
 from .forms import CreateUserForm, UploadImageForm, CommentForm
 from django.contrib.auth import authenticate, login, logout
