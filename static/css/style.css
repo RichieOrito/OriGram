@@ -45,18 +45,14 @@ li {
   }
 }
 
-#navWrapper #logo a {
-  color: #ffffff;
-}
-
-#navWrapper #logo a div img {
+#logo a div img {
   height: auto;
   max-width: 150px;
   width: fit-content;
   object-fit: cover;
 }
 
-#navWrapper #searchDiv #search {
+#search {
   font-family: Roboto, 'FontAwesome';
   font-weight: lighter;
   font-size: 0.95rem;
@@ -68,21 +64,16 @@ li {
   width: 100%;
 }
 
-#navWrapper #searchDiv #search:focus {
+#search:focus {
   outline: none;
-  text-align: left;
+  
 }
 
-
-#navWrapper #searchDiv #search:focus::placeholder {
-  text-align: left;
-}
-
-#navWrapper #nav {
+#nav {
   height: 100%;
 }
 
-#navWrapper #nav ul {
+#nav ul {
   width: 100%;
   height: inherit;
   margin-right: 0;
@@ -90,27 +81,29 @@ li {
   margin-bottom: 0;
 }
 
-#navWrapper #nav ul li a {
+#nav ul li a {
   color: #ffffff;
   margin: 0;
   height: 100%;
 }
 
-#navWrapper #nav ul li a i {
+#nav ul li a i {
   font-size: 1.6rem;
   font-weight: light;
   height: 100%;
   display: flex;
   align-items: center;
+  transition: 500ms;
 }
 
-#navWrapper #nav ul li a i::after {
+#nav ul li a i::after {
   content: "";
   display: none;
 }
 
-#navWrapper #nav ul li a:hover {
+#nav ul li a:hover {
   color: #FF2442;
+  transform: scale(1.2);
 }
 
 #contentWrapper {
@@ -130,7 +123,7 @@ li {
   }
 }
 
-#contentWrapper #main .status {
+.status {
   overflow-x: auto;
   scrollbar-width: none;
   overflow-x: scroll;
@@ -145,27 +138,23 @@ li {
   text-align: center;
 }
 
-#contentWrapper #main .status .status-item .status-div {
+.status-div {
   height: 55px;
   width: 55px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 0 2px white, 0 0 0 4px #FF2442;
+  transition: 750ms;
 }
 
-#contentWrapper #main .status .status-item .status-div img {
+.status-div img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-#contentWrapper #main a {
-  color: #202020;
-}
-
-#contentWrapper #main a p {
-  font-family: 'Grand Hotel', cursive;
-  font-size: 2rem;
+.status-div:hover {
+  transform: scale(1.2);
 }
 
 .post .post-header {
@@ -348,4 +337,20 @@ li {
 
 #subContent .affix .suggestions .image {
   box-shadow: none;
+}
+
+.links {
+  margin-top: 60px;
+}
+
+.links > a {
+  color: gray;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.copyright {
+  margin-top: 30px;
+  color: gray;
+  font-size: 13px;
 }
