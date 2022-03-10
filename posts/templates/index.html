@@ -58,8 +58,7 @@
                             <h5><a href="#">...</a></h5>
                         </div>
                     </div>
-                    <div class="post-content" data-bs-toggle="modal" data-bs-target="#imageModal"
-                        data-url="{{ post.image.url }}" data-username="{{ post.user.user.username }}" data-profilepic="{{post.user.profile_pic.url}}" data-caption="{{ post.description }}">
+                    <div class="post-content">
                         <img src="{{ post.image.url }}" alt="">
                     </div>
 
@@ -73,9 +72,6 @@
                                 {% else %}
                                 <a href="{% url 'like' post_id=post.id%}"><i class='bx bx-heart px-2 ms-0'></i></a>
                                 {% endif %}
-
-
-
 
                                 <a href="#"><i class='bx bx-message-rounded px-2'></i></a>
                                 <a href="#"><i class='bx bx-paper-plane px-2'></i></a>
